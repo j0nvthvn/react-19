@@ -4,12 +4,16 @@ import { Link } from "react-router-dom";
 export const CardList = () => {
   const temasTeoria = [
     {
-      title: "useEffect",
+      title: "hook useEffect",
       to: "/useffect",
     },
     {
       title: "imagenes",
-      to: "imagenes",
+      to: "/imagenes",
+    },
+    {
+      title: "rutas anidadas",
+      to: "rutasanidadas",
     },
   ];
   return (

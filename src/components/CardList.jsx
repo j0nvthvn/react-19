@@ -2,6 +2,8 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 import { Link } from "react-router-dom";
 
 export const CardList = () => {
+  const urlImage =
+    "https://www.infobae.com/resizer/v2/ZGAA4ML5JZECVN24L7Z3XFDDD4.jpg?auth=a870cb85f7a92ea418827654f26da1bf86ecc50d5b241b00a70068e236f0180e&smart=true&width=1200&height=900&quality=85";
   const temasTeoria = [
     {
       title: "hook useEffect",
@@ -9,7 +11,7 @@ export const CardList = () => {
     },
     {
       title: "imagenes",
-      to: "/imagenes",
+      to: `/imagenes?src=${urlImage}}`,
     },
     {
       title: "rutas anidadas",

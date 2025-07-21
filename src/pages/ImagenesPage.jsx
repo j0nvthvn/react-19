@@ -1,6 +1,9 @@
+import { useParams, useSearchParams } from "react-router-dom";
 import imagenlocal from "../assets/dog-8781844_1280.jpg";
 import { BtnVolver } from "../components/ui/buttons/BtnVolver.jsx";
 export const ImagenesPage = () => {
+  const [searchParams] = useSearchParams();
+  const src = searchParams.get("src")
   return (
     <main className="max-w-3xl mx-auto p-6 space-y-10">
       <BtnVolver />
@@ -8,6 +11,10 @@ export const ImagenesPage = () => {
       <section className="space-y-2 ">
         <h2 className="text-xl font-semibold">Imagen local importada</h2>
         <img src={imagenlocal} alt="imagen_local" />
+      </section>
+      <section className="space-y-2 ">
+        <h2 className="text-xl font-semibold">Imagen con searchParams</h2>
+        <img src={src} alt="imagen_local" />
       </section>
       <section className="space-y-2 ">
         <h2 className="text-xl font-semibold">Imagen desde URL externa</h2>
@@ -18,7 +25,8 @@ export const ImagenesPage = () => {
       </section>
       <section className="space-y-2 ">
         <h2 className="text-xl font-semibold">Imagen como fondo</h2>
-        <div className="h-64 bg-cover bg-center rounded-2xl items-center justify-center"
+        <div
+          className="h-64 bg-cover bg-center rounded-2xl items-center justify-center"
           style={{
             backgroundImage:
               "url('https://cdn.pixabay.com/photo/2024/05/22/21/51/dog-8781844_960_720.jpg')",

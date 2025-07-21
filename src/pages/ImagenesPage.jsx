@@ -16,7 +16,8 @@ export const ImagenesPage = () => {
       </section>
       <section className="space-y-2 ">
         <h2 className="text-xl font-semibold">Imagen como fondo</h2>
-        <div className="h-64 bg-cover bg-center rounded-2xl items-center justify-center"
+        <div
+          className="h-64 bg-cover bg-center rounded-2xl items-center justify-center"
           style={{
             backgroundImage:
               "url('https://cdn.pixabay.com/photo/2024/05/22/21/51/dog-8781844_960_720.jpg')",

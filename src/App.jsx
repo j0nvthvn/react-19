@@ -1,10 +1,13 @@
-import { HolaMundo } from "./components/HolaMundo";
-import { Contador } from "./components/Contador";
-import { CardProducto } from "./components/CardProducto";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MyRoutes } from "./routers/router";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+const queryClient = new QueryClient();
 function App() {
   return (
-    <MyRoutes />
+    <QueryClientProvider client={queryClient}>
+      <MyRoutes />
+      <ReactQueryDevtools initialIsOpen={false} />
+    </QueryClientProvider>
   );
 }
 

@@ -17,6 +17,10 @@ export const CardList = () => {
       title: "rutas anidadas",
       to: "rutasanidadas",
     },
+    {
+      title: "apis",
+      to: "/apis",
+    },
   ];
   return (
     <div className="flex flex-col gap-4">

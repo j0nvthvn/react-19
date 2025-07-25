@@ -8,6 +8,7 @@ import { RutasAnidadasPage } from "../pages/RutasAnidadasPage";
 import { PerfilPage } from "../pages/PerfilPage";
 import { ConfiguracionPage } from "../pages/ConfiguracionPage";
 import { ApisPage } from "../pages/ApisPage";
+import { FormulariosPage } from "../pages/FormulariosPage";
 
 export const MyRoutes = () => (
   <BrowserRouter>
@@ -17,6 +18,7 @@ export const MyRoutes = () => (
       <Route path="/apis" element={<ApisPage />} />
       <Route path="/useffect" element={<UseEffectPage />} />
       <Route path="/imagenes" element={<ImagenesPage />} />
+      <Route path="/formularios" element={<FormulariosPage />} />
       <Route path="/rutasanidadas" element={<RutasAnidadasPage />}>
         {/* ruta por defecto */}
         <Route index element={<Navigate to={"perfil/10"} replace />} />

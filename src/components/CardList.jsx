@@ -21,6 +21,10 @@ export const CardList = () => {
       title: "apis",
       to: "/apis",
     },
+        {
+      title: "formularios",
+      to: "/formularios",
+    },
   ];
   return (
     <div className="flex flex-col gap-4">

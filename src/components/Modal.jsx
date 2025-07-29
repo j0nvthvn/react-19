@@ -1,3 +1,3 @@
-export const Modal = () => {
-  return <div>Hola soy un modal</div>;
+export const Modal = ({p}) => {
+  return <div>Hola soy un modal {p?.title} </div>;
 };

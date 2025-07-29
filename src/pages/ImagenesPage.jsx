@@ -1,13 +1,17 @@
 import { useParams, useSearchParams } from "react-router-dom";
 import imagenlocal from "../assets/dog-8781844_1280.jpg";
 import { BtnVolver } from "../components/ui/buttons/BtnVolver.jsx";
+import { useMenuStore } from "../store/MenuStore.jsx";
 export const ImagenesPage = () => {
+  const { itemSelect } = useMenuStore();
   const [searchParams] = useSearchParams();
-  const src = searchParams.get("src")
+  const src = searchParams.get("src");
   return (
     <main className="max-w-3xl mx-auto p-6 space-y-10">
       <BtnVolver />
       <h1 className="text-3xl font-bold text-center">Imagenes con REACT</h1>
+      {itemSelect?.title}
+      {itemSelect?.to}
       <section className="space-y-2 ">
         <h2 className="text-xl font-semibold">Imagen local importada</h2>
         <img src={imagenlocal} alt="imagen_local" />

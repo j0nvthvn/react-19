@@ -1,6 +1,8 @@
 import { useForm } from "react-hook-form";
+import { useMenuStore } from "../store/MenuStore";
 
 export const FormulariosPage = () => {
+  const { itemSelect } = useMenuStore();
   const {
     register,
     handleSubmit,
@@ -8,11 +10,11 @@ export const FormulariosPage = () => {
     watch,
     reset,
   } = useForm({
-    defaultValues:{
-      nombre:"jonathan",
-      edad:22,
-      email:"jonathan@gmail.com"
-    }
+    defaultValues: {
+      nombre: "jonathan",
+      edad: 22,
+      email: "jonathan@gmail.com",
+    },
   });
   const enviar = (data) => {
     alert(data.email);
@@ -21,6 +23,8 @@ export const FormulariosPage = () => {
   return (
     <main className="h-screen text-black flex flex-col gap-5 p-4">
       <h1>FormulariosPage {watch("nombre")}</h1>
+      {itemSelect?.title}
+      {itemSelect?.to}
       <form
         onSubmit={handleSubmit(enviar)}
         className="border p-2 flex flex-col gap-4"

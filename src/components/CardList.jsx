@@ -2,9 +2,10 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Modal } from "./Modal";
+import { useMenuStore } from "../store/MenuStore";
 
 export const CardList = () => {
-  const [itemSelect, setItemSelect] = useState();
+  const {setItemSelect} = useMenuStore()
   const urlImage =
     "https://www.infobae.com/resizer/v2/ZGAA4ML5JZECVN24L7Z3XFDDD4.jpg?auth=a870cb85f7a92ea418827654f26da1bf86ecc50d5b241b00a70068e236f0180e&smart=true&width=1200&height=900&quality=85";
   const temasTeoria = [

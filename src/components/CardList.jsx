@@ -29,6 +29,14 @@ export const CardList = () => {
       title: "formularios",
       to: "/formularios",
     },
+    {
+      title: "zustand",
+      to: "/zustand",
+    },
+        {
+      title: "crud supabase",
+      to: "/crudsupabase",
+    },
   ];
   return (
     <div className="flex flex-col gap-4">

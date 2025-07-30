@@ -9,6 +9,8 @@ import { PerfilPage } from "../pages/PerfilPage";
 import { ConfiguracionPage } from "../pages/ConfiguracionPage";
 import { ApisPage } from "../pages/ApisPage";
 import { FormulariosPage } from "../pages/FormulariosPage";
+import { ZustandPage } from "../pages/ZustandPage";
+import { CrudSupabase } from "../pages/CrudSupabase";
 
 export const MyRoutes = () => (
   <BrowserRouter>
@@ -19,6 +21,8 @@ export const MyRoutes = () => (
       <Route path="/useffect" element={<UseEffectPage />} />
       <Route path="/imagenes" element={<ImagenesPage />} />
       <Route path="/formularios" element={<FormulariosPage />} />
+      <Route path="/zustand" element={<ZustandPage />} />
+      <Route path="/crudsupabase" element={<CrudSupabase />} />
       <Route path="/rutasanidadas" element={<RutasAnidadasPage />}>
         {/* ruta por defecto */}
         <Route index element={<Navigate to={"perfil/10"} replace />} />

@@ -1,7 +1,55 @@
+import { useQuery } from "@tanstack/react-query";
+import { useTareasStore } from "../store/TareasStore";
+import { Icon } from "@iconify/react/dist/iconify.js";
+
 export const CrudSupabase = () => {
+  const { mostrarTareas } = useTareasStore();
+  const { data, isLoading, error } = useQuery({
+    queryKey: ["mostrar tareas"],
+    queryFn: mostrarTareas,
+  });
+  if (isLoading) {
+    return <span>cargando...</span>;
+  }
+  if (error) {
+    return <span>error... {error.message}</span>;
+  }
   return (
-    <div className="h-screen bg-amber-300 text-black">
-      <span>CrudSupabase</span>
-    </div>
+    <main className="min-h-screen bg-amber-300 flex items-center justify-center p-4">
+      <div className="bg-white p-6 rounded-xl shadow-xl w-full max-w-md">
+        <h1 className="text-2xl font-bold text-center text-black mb-4">
+          Tareas - SUPABASE + REACT
+        </h1>
+        <form className="flex gap-2 mb-4">
+          <input className="flex-1 border p-2 rounded-md focus:outline-none focus:border-0 focus:ring-2 focus:ring-amber-400" />
+          <button className="bg-amber-400 text-black font-bold px-4 rounded hover:bg-amber-300 cursor-pointer">
+            Agregar
+          </button>
+        </form>
+        <ul className="flex flex-col">
+          {data?.map((item, index) => {
+            return (
+              <li
+                className="flex justify-between items-center p-3 bg-amber-100 rounded shadow-sm"
+                key={index}
+              >
+                <span
+                  className={`cursor-pointer flex-1 ${
+                    item.state ? "line-through text-gray-400" : ""
+                  }`}
+                >
+                  {item.nombre}
+                </span>
+                <Icon
+                  icon="fluent-emoji:skull-and-crossbones"
+                  width="32"
+                  height="32"
+                />{" "}
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </main>
   );
 };
